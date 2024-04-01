@@ -1471,3 +1471,42 @@ section {
     margin: -20px 0 30px 0;
   }
 }
+
+/* Estilos para el botón flotante de WhatsApp */
+.whatsapp-float {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  bottom: 80px; /* Ajusta la posición hacia arriba */
+  right: 40px;
+  background-color: #25d366;
+  color: #fff;
+  border-radius: 50%;
+  text-align: center;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
+  z-index: 100;
+  animation: pulse 2s infinite alternate, glow 2s infinite alternate; /* Animaciones de pulso y destello */
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.2); /* Ajusta el factor de escala para que sea más pronunciado */
+  }
+}
+
+@keyframes glow {
+  0% {
+    box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.2);
+  }
+  100% {
+    box-shadow: 0px 0px 20px #25d366; /* Ajusta el color y la intensidad del destello */
+  }
+}
+
+.my-float {
+  font-size: 30px; /* Ajusta el tamaño del icono */
+  line-height: 60px; /* Ajusta el icono verticalmente dentro del botón */
+}
