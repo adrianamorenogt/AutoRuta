@@ -233,48 +233,58 @@
     }
   });
 
-
-  // document.getElementById("pause-button").addEventListener("click", function() {
-  //   var video = document.getElementById("background-video");
-  //   if (video.paused) {
-  //     video.play();
-  //     this.innerText = "Pausar Video";
-  //   } else {
-  //     video.pause();
-  //     this.innerText = "Reproducir Video";
-  //   }
-  // });
-
-
-  // document.getElementById("pause-button").addEventListener("click", function() {
-  //   var video = document.getElementById("background-video");
-  //   var icon = document.getElementById("icon");
-  //   if (video.paused) {
-  //     video.play();
-  //     icon.classList.remove("bi-play-fill");
-  //     icon.classList.add("bi-pause-fill");
-  //   } else {
-  //     video.pause();
-  //     icon.classList.remove("bi-pause-fill");
-  //     icon.classList.add("bi-play-fill");
-  //   }
-  // });
-  
-  document.getElementById("pause-button").addEventListener("click", function() {
+  document.addEventListener("DOMContentLoaded", function() {
     var video = document.getElementById("background-video");
     var playIcon = document.getElementById("play-icon");
     var pauseIcon = document.getElementById("pause-icon");
+    var pauseButton = document.getElementById("pause-button");
+
+    pauseButton.addEventListener("click", function() {
+        if (video.paused) {
+            video.play();
+            playIcon.classList.add("d-none");
+            pauseIcon.classList.remove("d-none");
+        } else {
+            video.pause();
+            playIcon.classList.remove("d-none");
+            pauseIcon.classList.add("d-none");
+        }
+    });
+
+    // Agregamos un evento para detectar cuando el video termina y lo volvemos a reproducir
+    video.addEventListener('ended', function() {
+        video.play();
+    });
+
+    // Pausar el video cuando se hace clic fuera del botón de pausa
+    video.addEventListener('click', function() {
+        if (!video.paused) {
+            video.pause();
+            playIcon.classList.remove("d-none");
+            pauseIcon.classList.add("d-none");
+        }
+    });
+
+    // Reproducir el video al cargar la página
+    video.play();
+});
+
+  
+  // document.getElementById("pause-button").addEventListener("click", function() {
+  //   var video = document.getElementById("background-video");
+  //   var playIcon = document.getElementById("play-icon");
+  //   var pauseIcon = document.getElementById("pause-icon");
     
-    if (video.paused) {
-      video.play();
-      playIcon.classList.add("d-none");
-      pauseIcon.classList.remove("d-none");
-    } else {
-      video.pause();
-      playIcon.classList.remove("d-none");
-      pauseIcon.classList.add("d-none");
-    }
-  });
+  //   if (video.paused) {
+  //     video.play();
+  //     playIcon.classList.add("d-none");
+  //     pauseIcon.classList.remove("d-none");
+  //   } else {
+  //     video.pause();
+  //     playIcon.classList.remove("d-none");
+  //     pauseIcon.classList.add("d-none");
+  //   }
+  // });
   
   
 

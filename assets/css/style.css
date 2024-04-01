@@ -504,7 +504,6 @@ background: linear-gradient(132deg, rgba(2,0,36,1) 27%, rgba(16,11,63,1) 62%, rg
 
 
 /* botón eséras */
-
 #hero .btn-get-started2 {
   font-family: "Raleway", sans-serif;
   font-weight: 500;
@@ -522,13 +521,20 @@ background: linear-gradient(132deg, rgba(2,0,36,1) 27%, rgba(16,11,63,1) 62%, rg
   background: linear-gradient(132deg, rgba(2,0,36,1) 27%, rgba(16,11,63,1) 62%, rgba(18,12,66,1) 63%, rgba(51,37,132,1) 85%, rgba(47,44,125,1) 100%);
 }
 
+.btn-get-started i {
+  font-size: 6em; /* Cinco veces más grande */
+  border: none;
+}
+
 #hero .btn-get-started2:hover {
   background: #2f248480;
   color: #fcfcfc;
+  border: none;
   text-decoration: none;
   box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
   border: linear-gradient(132deg, rgba(2,0,36,1) 27%, rgba(16,11,63,1) 62%, rgba(18,12,66,1) 63%, rgba(51,37,132,1) 85%, rgba(47,44,125,1) 100%);
 } 
+
 
 
 @media (max-width: 768px) {
@@ -1513,3 +1519,5 @@ section {
 
 /* REVISAR BOTON DE WHASTAPP  */
 /* } */
+
+
