@@ -233,4 +233,49 @@
     }
   });
 
+
+  // document.getElementById("pause-button").addEventListener("click", function() {
+  //   var video = document.getElementById("background-video");
+  //   if (video.paused) {
+  //     video.play();
+  //     this.innerText = "Pausar Video";
+  //   } else {
+  //     video.pause();
+  //     this.innerText = "Reproducir Video";
+  //   }
+  // });
+
+
+  // document.getElementById("pause-button").addEventListener("click", function() {
+  //   var video = document.getElementById("background-video");
+  //   var icon = document.getElementById("icon");
+  //   if (video.paused) {
+  //     video.play();
+  //     icon.classList.remove("bi-play-fill");
+  //     icon.classList.add("bi-pause-fill");
+  //   } else {
+  //     video.pause();
+  //     icon.classList.remove("bi-pause-fill");
+  //     icon.classList.add("bi-play-fill");
+  //   }
+  // });
+  
+  document.getElementById("pause-button").addEventListener("click", function() {
+    var video = document.getElementById("background-video");
+    var playIcon = document.getElementById("play-icon");
+    var pauseIcon = document.getElementById("pause-icon");
+    
+    if (video.paused) {
+      video.play();
+      playIcon.classList.add("d-none");
+      pauseIcon.classList.remove("d-none");
+    } else {
+      video.pause();
+      playIcon.classList.remove("d-none");
+      pauseIcon.classList.add("d-none");
+    }
+  });
+  
+  
+
 })()
